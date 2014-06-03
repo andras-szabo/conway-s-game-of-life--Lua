@@ -44,7 +44,6 @@ function prt(table)
 		end
 		print(row)
 	end
-	print("\n");
 end
 
 print("Mkay, so enter N, then X and Y.")
@@ -58,10 +57,6 @@ buffer = {}
 for i = 1,sizex do
 	map[i] = {}
 	buffer[i] = {}
-	for j = 1,sizey do
-		map[i][j] = nil
-		buffer[i][j] = nil
-	end
 end
 
 map.sizex = sizex
@@ -77,8 +72,8 @@ for i = 1,sizey do
 end
 
 for i = 1, steps do
-	print("Step ", i-1)
-	prt(map)
+	print("\nStep ", i)
+
 	for a = 1,sizex do
 		for b = 1,sizey do
 			buffer[a][b]=deadOrAlive(map, a, b)
@@ -91,7 +86,6 @@ for i = 1, steps do
 			buffer[a][b]=nil
 		end
 	end
+	prt(map)
 end
 
-print("Step ",i)
-prt(map)
